@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:39:19 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/06 15:56:54 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:14:05 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putendl_fd(char *s, int fd)
 			s++;
 			i++;
 		}
-		str -= i;
+		s -= i;
 	}
 	write(fd, "\n", 1);
 }

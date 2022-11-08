@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 22:02:27 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/06 15:33:09 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:13:35 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 		return (string);
 	}
+}

@@ -1,39 +1,63 @@
+SRCS	=	ft_isascii.c	\
+			ft_memcpy.c		\
+			ft_putstr_fd.c	\
+			ft_strlcat.c	\
+			ft_strrchr.c	\
+			ft_atoi.c		\
+			ft_isdigit.c	\
+			ft_memmove.c	\
+			ft_split.c		\
+			ft_strlcpy.c	\
+			ft_strtrim.c	\
+			ft_bzero.c		\
+			ft_isprint.c	\
+			ft_memset.c		\
+			ft_strchr.c		\
+			ft_strlen.c		\
+			ft_substr.c		\
+			ft_calloc.c		\
+			ft_itoa.c		\
+			ft_putchar_fd.c	\
+			ft_strdup.c		\
+			ft_strmapi.c	\
+			ft_tolower.c	\
+			ft_isalnum.c	\
+			ft_memchr.c		\
+			ft_putendl_fd.c	\
+			ft_striteri.c	\
+			ft_strncmp.c	\
+			ft_toupper.c	\
+			ft_isalpha.c	\
+			ft_memcmp.c		\
+			ft_putnbr_fd.c	\
+			ft_strjoin.c	\
+			ft_strnstr.c	\
+
+OBJS	= ${SRCS:.c=.o}
+
 NAME	= libft.a
 
-DIR_SRCS	= srcs
-DIR_OBJS	= objs
-SUBDIRS		= is to mem str put lst math gnl printf
+CC		= gcc
 
-SRCS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
-OBJS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))
-SRCS		= $(foreach dir, $(SRCS_DIRS), $(wildcard $(dir)/*.c))
-OBJS		= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
+AR		= ar rcs
 
-INCLUDES	= -I includes
+RM		= rm -f
 
-CC		= clang
 CFLAGS	= -Wall -Wextra -Werror
-RM		= /bin/rm -f
 
-$(DIR_OBJS)/%.o :	$(DIR_SRCS)/%.c
-			@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
-			@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+.c.o:
+	${CC} -c $< -o ${<:.c=.o}
 
-all: $(NAME)
+${NAME}:	${OBJS}
+	${AR} ${NAME} ${OBJS}
 
-# all:
-# 	$(CC) $(CFLAGS) test.c && ./a.out
-
-$(NAME):	$(OBJS)
-			@ar -rcs $(NAME) $(OBJS)
-			@ranlib $(NAME)
+all:		${NAME}
 
 clean:
-			@$(RM) $(OBJS)
-			@$(RM) -r $(DIR_OBJS)
+	${RM} ${OBJS} ${B_OBJS}
 
 fclean:		clean
-			@$(RM) $(NAME)
+	${RM} ${NAME}
 
 re:			fclean all
 
