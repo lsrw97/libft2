@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:36:51 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 19:13:01 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:44:06 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	int		i;
-	char	c;
 
 	i = 0;
 	if (fd >= 0)

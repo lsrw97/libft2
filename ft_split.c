@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:04:00 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/04 17:53:45 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:39:59 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ char	**ft_split(char const *s, char c)
 	// if (s[0] == '\0' || ft_strlen(s) == 0)
 	// 	return (NULL);
 	// else
+	str = malloc(1);
 	fillstrings((char *)s, c, str);
 	return (str);
 }

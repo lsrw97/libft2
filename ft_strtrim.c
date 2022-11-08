@@ -6,15 +6,12 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 22:02:27 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 19:13:35 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:32:47 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-
-
-
 
 size_t	ft_strlen(const char *s)
 {
@@ -39,12 +36,11 @@ void	ft_strcpy(char *s1, char *s2)
 		i++;
 	}
 		s1[i] = '\0';
-
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
+	size_t	i;
 	char	*string;
 
 	string = malloc(ft_strlen(s1) + 1);
@@ -67,4 +63,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 		return (string);
 	}
+	return (string);
 }
