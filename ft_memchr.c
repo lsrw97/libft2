@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 21:08:48 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/06 17:40:46 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:33:17 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			i++;
 			continue ;
 		}
-		if (*(unsigned char *)(s + i) == c)
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
 		{
 			p = (unsigned char *)(s + i);
 			return (p);
