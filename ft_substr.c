@@ -6,26 +6,32 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 17:42:41 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 16:41:51 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:53:50 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
+	j = 0;
 	substr = malloc(len + 1);
-	if (substr == NULL)
+	if (!substr)
 		return (NULL);
-	while (i != len)
+	while (s[i])
 	{
-		substr[i++] = s[start++];
+		if (i >= (size_t)start && j < len)
+			substr[j++] = s[i];
+		i++;
 	}
-	substr[i] = '\0';
+	substr[j] = '\0';
+	printf("%s", substr);
 	return (substr);
 }

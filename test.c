@@ -6,23 +6,28 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:47:12 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 20:21:48 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/12 20:45:53 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    <stdio.h>
 #include "libft.h"
-#include "ft_strchr.c"
+#include "ft_strtrim.c"
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <unistd.h>
+#include "libft.h"
 
-
+char	func(unsigned int x, char c)
+{
+   printf("%c", c);
+   return (c + x - x);
+}
 
 int	main(void)
 {
-   char dst[11] = "adatsd";
+   char	s1[] = "12345";
 
-   printf("%s\n", strchr(dst, 't' + 256));
-   printf("%s", ft_strchr(dst, 't' + 256));
+   printf("\n%s", ft_strtrim(s1, "15"));
 }

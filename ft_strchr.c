@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:20:23 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 21:03:07 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:16:37 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,3 @@ char	*ft_strchr(const char *s, int c)
 	p = (char *)s + i;
 	return (p);
 }
-
-// char	*ft_strchr(const char *s, int c)
-// {
-// 	while (*s != '\0')
-// 	{
-// 		if ((unsigned char)*s == (unsigned char)c)
-// 			return ((char *)s);
-// 		s++;
-// 	}
-// 	if (c == 0)
-// 		return ((char *)s);
-// 	return (NULL);
-// }
