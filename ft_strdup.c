@@ -6,11 +6,12 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 17:00:43 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/12 20:44:48 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:08:35 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

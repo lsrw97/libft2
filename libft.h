@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:18:07 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 19:24:54 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:34:38 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int	ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);

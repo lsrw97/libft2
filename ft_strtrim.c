@@ -5,13 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 22:02:27 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/12 20:46:15 by eelisaro         ###   ########.fr       */
+/*   Created: 2022/11/13 15:22:03 by eelisaro          #+#    #+#             */
+/*   Updated: 2022/11/13 17:20:59 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
@@ -25,94 +23,55 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-char	*ft_strdup(const char *s)
-{
-	char	*str;
-	size_t	i;
 
-	i = 0;
-	str = malloc(ft_strlen(s) + 1);
-	if (str == NULL)
-		return (NULL);
-	while (i != ft_strlen(s))
-	{
-		str[i] = s[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
-}
-
-
-void	ft_strcpy(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s2[i] != '\0')
-	{
-		s1[i] = s2[i];
-		i++;
-	}
-		s1[i] = '\0';
-}
-
-// char	*ft_strtrim(char const *s1, char const *set)
-// {
-// 	size_t	i;
-// 	char	*string;
-
-// 	string = malloc(ft_strlen(s1) + 1);
-// 	if (!string)
-// 		return (NULL);
-// 	ft_strcpy (string, (char *)s1);
-// 	i = -1;
-// 	while (set[++i])
-// 	{
-// 		if (string[0] == set[i])
-// 		{
-// 			string = string + 1;
-// 			break ;
-// 		}
-// 	}
-// 	i = -1;
-// 	while (set[++i])
-// 	{
-// 		if (string[ft_strlen(string) - 1] == set[i])
-// 			{
-// 				string[ft_strlen(string) - 1] = '\0';
-// 				return (string);
-// 			}
-// 	}
-// 	return (string);
-// }
-
-int	haschar(char *s, char c)
+int	is_in_set(char *set, char c)
 {
 	int	i;
 
 	i = -1;
-	while (s[++i])
+	while (set[++i])
 	{
-		if (s[i] == c)
+		if (set[i] == c)
 			return (1);
 	}
 	return (0);
 }
 
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i != size - 1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
+}
+
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*string;
+	int		i;
+	char	*s;
+	char	*s2;
 
-	string = malloc(ft_strlen((char *)s1) + 1);
-	if (!string)
+	s = malloc(ft_strlen(s1) + 1);
+	i = 0;
+	if (!s1 && !set && !s)
 		return (NULL);
-	if (set == NULL)
-		return (ft_strdup(s1));
-	ft_strcpy(string, (char *)s1);
-	if (haschar((char *)set, string[0]))
-		string += 1;
-	if (haschar((char *)set, string[ft_strlen(string) - 1]))
-		string[ft_strlen(string) - 1] = '\0';
-	return (string);
+	ft_strlcpy(s, s1, ft_strlen(s1) + 1);
+	while (s[i] && is_in_set((char *)set, s1[i++]))
+		s += 1;
+	i = ft_strlen(s) - 1;
+	if (i)
+		while (i >= 0 && is_in_set((char *)set, s[i]))
+			s[i--] = '\0';
+	s2 = malloc(ft_strlen(s) + 1);
+	ft_strlcpy(s2, s, ft_strlen(s) + 1);
+	return ((char *)s2);
 }
