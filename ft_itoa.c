@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 17:56:45 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/04 22:12:36 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:44:11 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,28 +50,29 @@ int	intlen(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		len;
-	int		i;
+	char		*str;
+	int			len;
+	int			i;
+	long int	num;
 
-	len = intlen(n);
+	num = n;
+	len = intlen(num);
 	str = malloc(len + 1);
 	if (len == 0 || !str)
 		return (NULL);
-	if (n == 0)
+	if (num == 0)
 		str[0] = '0';
-	if (n < 0)
+	if (num < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		num *= -1;
 	}
 	str[len] = '\0';
-	while (n != 0)
+	while (num != 0)
 	{
-		i = n % 10;
+		i = num % 10;
 		str[len-- - 1] = i + 48;
-		n /= 10;
+		num /= 10;
 	}
-	printf("%s", str);
 	return (str);
 }

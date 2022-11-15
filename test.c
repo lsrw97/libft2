@@ -6,13 +6,13 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:47:12 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/13 19:15:55 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:12:49 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    <stdio.h>
 #include "libft.h"
-#include "ft_split.c"
+#include "ft_strlcat.c"
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
@@ -23,11 +23,10 @@
 
 int	main(void)
 {
-   char	s1[] = "1221135769";
-   // char set[] = "19236";
-   char **s = ft_split(s1, '2');
 
-   int i = -1;
-   while (s[++i])
-      printf("%s\n", s[i]);
+   char dest[30];
+   memset(dest, 'B', 4);
+	char * src = (char *)"AAAAAAAAA";
+	printf("%ld\n", ft_strlcat(dest, src, 3));
+   printf("%ld, %ld, %ld\n", 3 + strlen(src), ft_strlen(dest), ft_strlen(src));
 }

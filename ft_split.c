@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:04:00 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/13 20:08:44 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:50:50 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,5 @@ void	allocmemory(char **strings, char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
-
-	str = fillstrings((char *)s, c);
-	return (str);
+	
 }
