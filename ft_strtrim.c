@@ -6,23 +6,11 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:22:03 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/13 17:20:59 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:22:43 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 int	is_in_set(char *set, char c)
 {
@@ -36,23 +24,6 @@ int	is_in_set(char *set, char c)
 	}
 	return (0);
 }
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (i != size - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
-}
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -75,7 +46,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 			s[i--] = '\0';
 	s2 = malloc(ft_strlen(s) + 1);
 	ft_strlcpy(s2, s, ft_strlen(s) + 1);
-	printf("%d", j);
 	free (s - j);
 	return ((char *)s2);
 }

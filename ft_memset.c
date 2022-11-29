@@ -6,11 +6,11 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 20:36:26 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/10/29 21:37:53 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:20:26 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 	{

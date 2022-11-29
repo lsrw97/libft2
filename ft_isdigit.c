@@ -6,11 +6,9 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:24:48 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/10/29 21:38:46 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:18:54 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isdigit(int x)
 {

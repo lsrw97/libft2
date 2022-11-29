@@ -6,39 +6,27 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 21:10:52 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/15 16:13:54 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:21:54 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	result;
-	size_t	dstlen;
+	size_t	j;
 
-	dstlen = ft_strlen(dst);
-	result = 0;
 	i = 0;
-	if (size > dstlen)
-		result = ft_strlen(src) + dstlen;
-	else
-		result = ft_strlen(src) + size;
-	while (src[i] && (dstlen + 1) < size)
-		dst[dstlen++] = src[i++];
-	dst[dstlen] = '\0';
-	return (result);
+	j = 0;
+	while (dst[i] && i < size)
+		i++;
+	while (src[j] && (i + j + 1) < size)
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	if (i < size)
+		dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }

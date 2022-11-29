@@ -6,24 +6,11 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:50:07 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/15 14:43:40 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:20:47 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-#include <stdio.h>
-#include<stdlib.h>
-
-// char	recursive(int *i, int num, char *c)
-// {
-// 	if (num <= 9)
-// 		recursive(i[0], num/10, c);
-// 	i[0]++;
-
-// }
-
+#include "libft.h"
 
 int	intlen(int n)
 {
@@ -49,7 +36,6 @@ int	intlen(int n)
 	}
 	return (i + neg);
 }
-
 
 char	*ft_itoa(int n)
 {
@@ -95,5 +81,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	str -= i;
 	free (str);
-
 }

@@ -6,12 +6,11 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:16:18 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 19:42:28 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:20:33 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

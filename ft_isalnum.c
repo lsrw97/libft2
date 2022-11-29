@@ -6,16 +6,12 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:35:28 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/06 18:42:41 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:59:14 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int	ft_isalnum(int x)
 {
-	if ((x >= 48 && x <= 57) || ((x >= 65 && x <= 90) || (x >= 97 && x <= 122)))
-		return (1);
-	else
-		return (0);
+	return ((x >= '0' && x <= '9') || (x >= 'A' && x <= 'Z')
+		|| (x >= 'a' && x <= 'z'));
 }

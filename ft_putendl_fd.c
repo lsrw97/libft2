@@ -6,27 +6,14 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:39:19 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 19:14:05 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:20:39 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (fd >= 0)
-	{
-		while (s[0] != '\0')
-		{
-			write(fd, s, 1);
-			s++;
-			i++;
-		}
-		s -= i;
-	}
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

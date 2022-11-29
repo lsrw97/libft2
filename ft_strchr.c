@@ -6,11 +6,11 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:20:23 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/12 17:16:37 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:21:00 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

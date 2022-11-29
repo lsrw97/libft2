@@ -6,11 +6,9 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 20:12:13 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/08 14:29:00 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:18:58 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isprint(int x)
 {

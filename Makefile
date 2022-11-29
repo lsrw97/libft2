@@ -41,17 +41,17 @@ CC		= gcc
 
 AR		= ar rcs
 
-RM		= rm -f
+RM		= rm -rf
 
 CFLAGS	= -Wall -Wextra -Werror
 
-.c.o:
-	${CC} -c $< -o ${<:.c=.o}
+all:		${NAME}
+
+%.o: %.c
+	${CC} -c $< ${CFLAGS} -o $@
 
 ${NAME}:	${OBJS}
 	${AR} ${NAME} ${OBJS}
-
-all:		${NAME}
 
 clean:
 	${RM} ${OBJS} ${B_OBJS}
