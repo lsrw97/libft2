@@ -79,13 +79,14 @@ int	is_valid(char *s, char c)
 	return (0);
 }
 
+
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	start;
 	size_t	end;
 	size_t	i;
 	char	**str;
-	int total_strings;
 
 	if (totalstrings((char *)s, c) == 1 && (ft_strlen((char *)s) == 0 || !is_valid((char *)s, c)))
 	{
@@ -93,14 +94,13 @@ char	**ft_split(char const *s, char c)
 		str[0] = NULL;
 		return str;
 	}
-	total_strings = totalstrings((char *)s, c);
-	str = malloc((sizeof(char *) * (total_strings + 1)));
+	str = malloc((sizeof(char *) * (totalstrings((char *)s, c) + 1)));
 	if (!str)
 		return (NULL);
 	i = 0;
 	start = 0;
 	end = 0;
-	while (i <= (size_t)(total_strings - 1))
+	while (i <= (size_t)(totalstrings((char *)s, c) - 1))
 	{
 		if (s[end] && s[end] == c)
 			{
@@ -111,9 +111,8 @@ char	**ft_split(char const *s, char c)
 		while (s[end] && s[end] != c)
 			end++;
 		str[i] = makeword((char *)s, start, end, c);
-
 		if (!str[i])
-			return(NULL);
+			return (NULL);
 		i++;
 	}
 	str[i] = NULL;
