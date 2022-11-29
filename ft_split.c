@@ -48,10 +48,12 @@ int totalstrings(char * s, char c) {
 			x = 0;
 		}
 	}
+	if (total == 0)
+		return (1);
 	return (total);
 }
 
-char	*makeword(char *str, int start, int end)
+char	*makeword(char *str, int start, int end, char c)
 {
 	char	*s;
 	int		i;
@@ -66,31 +68,16 @@ char	*makeword(char *str, int start, int end)
 	return (s);
 }
 
-// void makeword(char *str, char *new, int start, int end) {
-// 	int i = end - start;
-// 	while(i){
-// 		new[i] = str[i];
-// 		i--;
-// 	}
-// }
-
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	is_valid(char *s, char c)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (i != size - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	i = -1;
+	while (s[++i])
+		if (s[i] != c)
+			return (1);
+	return (0);
 }
-
 
 char	**ft_split(char const *s, char c)
 {
@@ -100,16 +87,19 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	int total_strings;
 
+	if (totalstrings((char *)s, c) == 1 && (ft_strlen((char *)s) == 0 || !is_valid((char *)s, c)))
+	{
+		str = malloc (sizeof(char *) * 1);
+		str[0] = NULL;
+		return str;
+	}
 	total_strings = totalstrings((char *)s, c);
-	if (!total_strings)
-		return (NULL);
 	str = malloc((sizeof(char *) * (total_strings + 1)));
 	if (!str)
 		return (NULL);
 	i = 0;
 	start = 0;
 	end = 0;
-	printf(" totalstr is %d\n", total_strings);
 	while (i <= (size_t)(total_strings - 1))
 	{
 		if (s[end] && s[end] == c)
@@ -119,20 +109,11 @@ char	**ft_split(char const *s, char c)
 				continue ;
 			}
 		while (s[end] && s[end] != c)
-		{
 			end++;
-		}
-		// printf("\nstart: str[%ld] = %c\n", start, s[start]);
-		// printf("end: str[%ld] = %c\n", end, s[end]);
-		// str[i] = malloc(((end - start) * sizeof(char)) + 1);
-
-		// ft_strlcpy(str[i], makeword((char *)s, start, end), end - start + 1);
-		str[i] = makeword((char *)s, start, end);
+		str[i] = makeword((char *)s, start, end, c);
 
 		if (!str[i])
 			return(NULL);
-		// printf("%s\n", str[i]);
-		// start = ++end;
 		i++;
 	}
 	str[i] = NULL;

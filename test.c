@@ -20,7 +20,6 @@
 #include "libft.h"
 #include <stddef.h>
 #include <stdint.h>
-#include <malloc.h>
 
 int	main(void)
 {
@@ -32,12 +31,14 @@ int	main(void)
    // char  **string;
    // string = ft_split(s, c);
 
-   char **tab = ft_split("  42 tripouille   ", ' ');
-   while (tab[i])
-   {
-      printf("maloc for tab[%d] is = %ld\n", i, malloc_usable_size(tab[i]));
-      printf("%s\n", tab[i++]);
-   }
+   char **tab = ft_split("     ", ' ');
+         printf("%p", tab[0]);
+
+   // while (tab[i])
+   // {
+   //    printf("%s", tab[i++]);
+   //    // printf("%s\n", tab[i++]);
+   // }
       // printf("%s\n", string[i]);
 
 }

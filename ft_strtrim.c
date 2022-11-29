@@ -59,13 +59,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*s;
 	char	*s2;
+	int		j;
 
+	j = 0;
 	s = malloc(ft_strlen(s1) + 1);
 	i = 0;
 	if (!s1 && !set && !s)
 		return (NULL);
 	ft_strlcpy(s, s1, ft_strlen(s1) + 1);
-	while (s[i] && is_in_set((char *)set, s1[i++]))
+	while (s[i] && is_in_set((char *)set, s1[i++]) && ++j)
 		s += 1;
 	i = ft_strlen(s) - 1;
 	if (i)
@@ -73,5 +75,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			s[i--] = '\0';
 	s2 = malloc(ft_strlen(s) + 1);
 	ft_strlcpy(s2, s, ft_strlen(s) + 1);
+	printf("%d", j);
+	free (s - j);
 	return ((char *)s2);
 }
