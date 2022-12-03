@@ -6,13 +6,13 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 15:50:07 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/29 20:20:47 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:36:06 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	intlen(int n)
+static int	intlength(int n)
 {
 	int	i;
 	int	neg;
@@ -37,7 +37,7 @@ int	intlen(int n)
 	return (i + neg);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoas(int n)
 {
 	char		*str;
 	int			len;
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	long int	num;
 
 	num = n;
-	len = intlen(num);
+	len = intlength(num);
 	str = malloc(len + 1);
 	if (len == 0 || !str)
 		return (NULL);
@@ -72,7 +72,7 @@ void	ft_putnbr_fd(int n, int fd)
 	int		i;
 
 	i = 0;
-	str = ft_itoa(n);
+	str = ft_itoas(n);
 	while (str[0] != '\0')
 	{
 		write(fd, str, 1);

@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:47:12 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/29 20:31:14 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/12/03 12:54:30 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(void)
 {
 	printf("%d\n", strncmp("abcdef", "abc\375xx", 5));
-	printf("%d\n", fn_strncmp("abcdef", "abc\375xx", 5));
+	printf("%d\n", ft_strncmp("abcdef", "abc\375xx", 5));
 
 
 }

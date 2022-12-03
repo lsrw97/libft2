@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 15:36:51 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/12/03 13:37:38 by eelisaro         ###   ########.fr       */
+/*   Created: 2022/12/03 18:10:22 by eelisaro          #+#    #+#             */
+/*   Updated: 2022/12/03 18:46:07 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_list  *ft_lstnew(void *content)
 {
-	int		i;
-
-	i = 0;
-	while (s[0] != '\0')
-	{
-		write(fd, s, 1);
-		s++;
-		i++;
-	}
-	s -= i;
+    t_list list;
+    
 }

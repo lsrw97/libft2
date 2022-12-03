@@ -6,13 +6,13 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 17:56:45 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/29 20:19:12 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:33:47 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	intlen(int n)
+static int	intlen(int n)
 {
 	int	i;
 	int	neg;

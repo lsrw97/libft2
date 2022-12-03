@@ -6,13 +6,13 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:04:00 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/29 19:18:33 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:34:49 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ts(char *s, char c)
+static int	ts(char *s, char c)
 {
 	int	i;
 	int	total;
@@ -41,7 +41,7 @@ int	ts(char *s, char c)
 	return (total);
 }
 
-char	*makeword(char *str, int start, int end)
+static char	*makeword(char *str, int start, int end)
 {
 	char	*s;
 	int		i;
@@ -56,7 +56,7 @@ char	*makeword(char *str, int start, int end)
 	return (s);
 }
 
-int	vl(char *s, char c)
+static int	vl(char *s, char c)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ int	vl(char *s, char c)
 	return (0);
 }
 
-char	**fillwords(char **str, char *s, char c)
+static char	**fillwords(char **str, char *s, char c)
 {
 	size_t	start;
 	size_t	end;

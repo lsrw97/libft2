@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:18:07 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/29 20:23:32 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/12/03 18:13:04 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+
+typedef struct s_list
+{
+	    void			        *content;
+	    struct s_list	*next;
+}	    t_list;
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
