@@ -6,7 +6,7 @@
 /*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 15:40:57 by eelisaro          #+#    #+#             */
-/*   Updated: 2022/11/29 20:18:22 by eelisaro         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:05:19 by eelisaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			x;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
 	x = nmemb * size;
 	if (nmemb != x / size)
 		return (NULL);

@@ -32,16 +32,17 @@ SRCS	=	ft_isascii.c	\
 			ft_putnbr_fd.c	\
 			ft_strjoin.c	\
 			ft_strnstr.c	\
-			ft_lstlast.c	\
-			ft_lstadd_back.c	\
-			ft_lstadd_front.c	\
-			ft_lstclear.c		\
-			ft_lstdelone.c	\
-			ft_lstiter.c		\
-			ft_lstmap.c		\
-
 
 OBJS	= ${SRCS:.c=.o}
+
+BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+					ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
+BONUS_OBJS		= $(BONUS:.c=.o)
+
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 NAME	= libft.a
 
@@ -62,10 +63,10 @@ ${NAME}:	${OBJS}
 	${AR} ${NAME} ${OBJS}
 
 clean:
-	${RM} ${OBJS} ${B_OBJS}
+	${RM} ${BONUS_OBJS} ${OBJS}
 
 fclean:		clean
-	${RM} ${NAME}
+	${RM} ${BONUS_OBJS} ${NAME}
 
 re:			fclean all
 

@@ -1,43 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eelisaro <eelisaro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/11 13:49:48 by eelisaro          #+#    #+#             */
+/*   Updated: 2022/12/11 15:23:59 by eelisaro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*lastnode;
 
 	lastnode = lst;
-	while (lastnode->next != NULL)
+	if (!lst)
+		return (NULL);
+	while (lastnode->next)
 		lastnode = lastnode->next;
 	return (lastnode);
 }
 
-// int main (void)
+// t_list
+// 	*ft_lstlast(t_list *lst)
 // {
-// 	t_list *new;
-// 	t_list **lst;
-// 	t_list *list;
-// 	t_list *new2;
-
-// 	// int *ptr;
-// 	// int **pptr;
-// 	// int ***ppptr;
-
-// 	// ppptr = &pptr;
-// 	// pptr = &ptr;
-
-// 	new = malloc(sizeof(t_list));
-// 	new2 = malloc(sizeof(t_list));
-// 	list = malloc(sizeof(t_list));
-
-// 	char str[11] = "hello world";
-// 	list->content = str;
-// 	list->next = NULL;
-
-// 	lst = &list;
-// 	new->next = list;
-// 	new->content = str;
-// 	new2->next = new;
-// 	new2->content = str;
-
-// 	printf("%p\n", ft_lstlast(list));
-// 	printf("new2: %p, new2->next: %p, new: %p, new->next: %p, list: %p, list->next: %p\n\n", new2, new2->next, new, new->next, list, list->next);
+// 	while (lst)
+// 	{
+// 		if (!lst->next)
+// 			return (lst);
+// 		lst = lst->next;
+// 	}
+// 	return (lst);
 // }
